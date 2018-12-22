@@ -51,11 +51,10 @@ choice.cost <- sort(unique(df$cost))
 
 ui <- dashboardPage(
   # header
-  dashboardHeader(title = "Whisky Recommender", titleWidth = 200),
+  dashboardHeader(titleWidth = 0),
   # sidebar
   dashboardSidebar(
     width = 200,
-    br(),
     sidebarMenu(
       id = "tabs",
       menuItem("Recommender", tabName = "recommender", icon = icon("glass"), selected = T),
@@ -68,6 +67,12 @@ ui <- dashboardPage(
   ),
   # body
   dashboardBody(
+    # custom title
+    tags$script(HTML('
+      $(document).ready(function() {
+        $("header").find("nav").append(\'<div id="title"> Whisky Recommender </div>\');
+      })
+     ')),
     # page style
     includeCSS("css/style.css"),
     # initialize library

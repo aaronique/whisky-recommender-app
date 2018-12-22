@@ -23,18 +23,28 @@ table {
   margin: 0 auto;
 }
 
-.dataTables_length {
-  float: left;
+.logo {
+  display: none !important;
 }
 
-.dataTables_filter {
-  float: right;
-}
-
-.main-header .logo {
-  font-family: 'Dancing Script';
+#title {
+  color: white;
+  text-align: center;
+  font-family: "Dancing Script";
   font-weight: bold;
   font-size: 20px;
+  margin-top: 10px;
+  margin-right: 35px;
+}
+
+.main-sidebar {
+  padding-top: 70px !important;
+}
+
+
+.main-header {
+  font-family: 'Dancing Script';
+  font-weight: bold;
 }
 
 .small-box {
@@ -44,6 +54,14 @@ table {
 .marker-cluster {
   background-clip: padding-box;
   border-radius: 20px;
+}
+
+.dataTables_length {
+  float: left;
+}
+
+.dataTables_filter {
+  float: right;
 }
 
 #searchButton.btn,
