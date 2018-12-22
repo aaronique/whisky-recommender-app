@@ -1,0 +1,11 @@
+<p>
+
+All the data in this study are obtained through web scraping using [Selenium](https://selenium-python.readthedocs.io/) with Python. The benefit of using Selenium lies in its ability to retrieve dynamic contents, such as rendered canvas, which is quite challenging to manage without a browser automation tool like this. Selenium also provides the function to wait for specific elements to be fully loaded before any scrapping happens. This is always crucial which could greatly improve success rates. The codes I used for scrapping can be found at the Git Repo, which is posted under About - Resource. Although scrapping is generally not considered illegal (check [this answer](https://stackoverflow.com/a/32674131) for details), it's better to maintain at a non-disruptive rate to avoid potential harm to the websites.
+
+When scraping is finished, the data collected are fed into a pipeline to be restructured, cleaned, and analyzed. Only data that relate to the topic and benefit the study are retained, with others discarded. This whole process is lengthy, yet rewarding. In the end, I acquired three datasets which contain information about whiskies, distilleries and flavor vocabulary respectively. These datasets are the foundations for exploratory data analysis and preprocessing, where the big ones are sliced into smaller ones and more datasets are generated and stored offline to relieve online computation loads.
+
+Data collection ends only when the data collected could answer the proposed question. The process typically follows a collect - tidy - analysis - refine - recollect pattern that requires some patience and knowledge. This procedure is well explained in the book [The Art of Data Science](https://leanpub.com/artofdatascience) which offers deep insights on other subjects related to this topic as well.
+
+Due to the scarcity of whisky data available online, the above datasets used in this study are not sufficient to cover all whisky products. Also, ratings and tasting notes are highly subjective which could vary a lot between individuals. This may result in biases which should be considered and studied when acquiring data from heterogeneous sources (such as rating and reviews from different websites).
+
+For the limitation of data collection in this work, please refer to Ideas Behind - Limitation.

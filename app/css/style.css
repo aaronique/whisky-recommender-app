@@ -1,0 +1,149 @@
+@import url('//fonts.googleapis.com/css?family=Dancing+Script:400,700|Indie+Flower');
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  line-height: 3em;
+  margin: 0 auto;
+}
+
+.dataTables_length {
+  float: left;
+}
+
+.dataTables_filter {
+  float: right;
+}
+
+.main-header .logo {
+  font-family: 'Dancing Script';
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.small-box {
+  height: 190px;
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+#searchButton.btn,
+#resetButton.btn {
+  color: #3c8dbc;
+  background-color: transparent;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  margin-left: calc(2vw - 5px);
+  margin-right: calc(2vw - 5px);
+  border: 0px;
+  border-radius: 50%;
+  box-shadow: 1px 2px #ccc;
+  outline: none;
+}
+
+#searchButton.btn:hover,
+#searchButton.btn:focus:hover,
+#resetButton.btn:hover,
+#resetButton.btn:focus:hover {
+  color: orange;
+}
+
+#searchButton.btn:focus,
+#resetButton.btn:focus {
+  color: #3c8dbc;
+}
+
+#searchButton.btn:active:focus,
+#resetButton.btn:active:focus {
+  color: orange;
+  box-shadow: 0 0 transparent;
+  transform: translateY(2px);
+}
+
+#profile {
+  height: calc(80vh) !important;
+}
+
+#pca {
+  height: calc(80vh) !important;
+}
+
+#distilleryMap {
+  height: calc(85vh) !important;
+}
+
+#clusterNum {
+  margin: 0;
+  margin-top: -25px;
+  margin-bottom: 3px;
+  padding: 0;
+}
+
+#cluster {
+  height: calc(80vh) !important;
+}
+
+#flavorVocab {
+  height: calc(100vw) !important;
+}
+
+@media all and (max-width: 1440px) {
+  .small-box h3 {
+    font-size: calc(24px + 0.006 * (100vw - 768px));
+  }
+
+  .small-box p {
+    font-size: calc(12px + 0.006 * (100vw - 768px));
+  }
+}
+
+@media all and (max-width: 1023px) {
+  #flavorVocab {
+    font-size: 10px !important;
+  }
+}
+
+@media all and (max-width: 767px) {
+
+  .small-box {
+    height: auto !important;
+  }
+
+  .small-box h3 {
+    font-size: 24px;
+  }
+
+  .small-box p {
+    font-size: 14px;
+  }
+
+  #searchButton.btn,
+  #resetButton.btn {
+    margin-left: calc(6vw);
+    margin-right: calc(6vw);
+  }
+
+  #flavorVocab {
+    font-size: 7px !important;
+  }
+}

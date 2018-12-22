@@ -1,0 +1,70 @@
+@startuml
+
+hide empty description
+
+skinparam state {
+  ArrowColor #3c8dbc
+  BackgroundColor transparent
+  BorderColor #EEEEEE
+  FontName Helvetica
+}
+skinparam shadowing false
+
+state Database {
+  state Whisky: database containing
+  Whisky: whisky flavors and other
+  Whisky: columns like name and cost
+  state "Experience Profile" as ExperienceProfile: typical flavor profiles on
+  ExperienceProfile: various experience levels
+}
+
+state "User Input" as UserInput {
+  state "User Profile Param" as UserProfileParam
+  state "Data Filtering Param" as DataFilteringParam
+  state "Result Display Param" as ResultDisplayParam
+  UserProfileParam: Mood;
+  UserProfileParam: Experience Level;
+  UserProfileParam: Preferred Flavor;
+  UserProfileParam: Favorite Whisky;
+  DataFilteringParam: Spirit Type; Distillery
+  DataFilteringParam: Origin; Cost; Rating; ABV;
+  ResultDisplayParam: Display;
+
+}
+
+state "Filter Data" as FilterData: filter whisky database
+FilterData: subject to
+FilterData: data filtering param
+
+state "Generate User Profile" as GenerateUserProfile: generate user profile based on
+GenerateUserProfile: experience profile, user profile 
+GenerateUserProfile: and favorite whisky profile
+
+state "Select Top Items" as SelectTopItems: select top k items
+SelectTopItems: using filtered data
+SelectTopItems: and user profile
+
+state "Calculate Matching Scores" as CalculateMatchingScores: calculate matching scores
+CalculateMatchingScores: for top k items using weights
+CalculateMatchingScores: of correlation, rating and diversity,
+CalculateMatchingScores: return items with highest scores
+
+state "Present Whisky Cards" as PresentWhiskyCards: only display certain number
+PresentWhiskyCards: of recommendations according
+PresentWhiskyCards: to result display param
+
+Whisky --> FilterData
+ExperienceProfile --> GenerateUserProfile
+
+FilterData --> GenerateUserProfile: filtered whisky data
+FilterData --> SelectTopItems: filtered whisky data
+GenerateUserProfile --> SelectTopItems: user profile
+SelectTopItems --> CalculateMatchingScores: top k items
+CalculateMatchingScores --> PresentWhiskyCards: recommended whiskies
+
+DataFilteringParam --> FilterData
+UserProfileParam --> GenerateUserProfile
+UserProfileParam --> CalculateMatchingScores: weights 
+ResultDisplayParam --> CalculateMatchingScores
+
+@enduml
